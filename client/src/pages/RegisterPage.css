@@ -1,0 +1,5 @@
+/* RegisterPage shares the .auth-screen / .auth-form / .field-group styles
+   defined in LoginPage.css (both pages are the same visual layout - a
+   split brand panel + form panel) - see RegisterPage.jsx's imports.
+   This file is reserved for register-specific overrides only, so the
+   shared rules aren't duplicated in two places and can't drift apart. */

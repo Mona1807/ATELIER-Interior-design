@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Environment variables (real secrets - never commit this)
+.env
+
+# Build output
+client/dist/
+
+# Uploaded files (runtime data, not source)
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS/editor
+.DS_Store
+.vscode/

@@ -1,0 +1,135 @@
+.auth-screen {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  min-height: 100vh;
+  background: var(--surface);
+}
+
+/* ---------- Left: brand / blueprint panel ---------- */
+.auth-brand {
+  position: relative;
+  background: var(--ink);
+  color: var(--plaster);
+  padding: 56px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.auth-brand__mark {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 0.02em;
+}
+
+.auth-brand__blueprint {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+}
+
+.auth-brand__blueprint path,
+.auth-brand__blueprint line,
+.auth-brand__blueprint circle {
+  stroke: var(--brass);
+  stroke-width: 1.1;
+  fill: none;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: draw-line 2.6s ease forwards;
+}
+
+.auth-brand__blueprint .fill-panel {
+  fill: rgba(176, 141, 87, 0.06);
+  stroke: none;
+  animation: none;
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.auth-brand__copy {
+  position: relative;
+  z-index: 1;
+  max-width: 380px;
+}
+
+.auth-brand__copy h1 {
+  font-size: 34px;
+  color: var(--surface);
+  margin-bottom: 18px;
+}
+
+.auth-brand__copy p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(244, 240, 232, 0.68);
+}
+
+.auth-brand__footer {
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+  color: rgba(244, 240, 232, 0.4);
+}
+
+/* ---------- Right: form panel ---------- */
+.auth-form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 380px;
+}
+
+.auth-form__header {
+  margin-bottom: 36px;
+}
+
+.auth-form__header h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.auth-form__header p {
+  color: var(--slate-dark);
+  font-size: 14.5px;
+}
+
+.auth-form__header p a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--brass);
+  text-underline-offset: 3px;
+}
+
+/* .field-group, .form-banner, .field-hint, .btn-primary are all defined
+   globally in index.css and reused as-is here. This file only adds the
+   auth-form-specific full-width override below. */
+.auth-form .btn-primary {
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 15px;
+}
+
+@media (max-width: 860px) {
+  .auth-screen {
+    grid-template-columns: 1fr;
+  }
+  .auth-brand {
+    display: none;
+  }
+  .auth-form-panel {
+    padding: 32px 24px;
+  }
+}

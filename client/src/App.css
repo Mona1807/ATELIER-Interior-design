@@ -1,0 +1,14 @@
+/* App-wide layout rules that sit above the raw reset in index.css but
+   below page-specific styles like LandingPage.css. Kept intentionally
+   minimal in Phase 1 - most visual structure lives in Layout.css and
+   each page's own stylesheet. */
+
+.app-shell {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell__content {
+  flex: 1;
+}
